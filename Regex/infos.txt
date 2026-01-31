@@ -1,0 +1,37 @@
+All meta characters : . ^ $ * ? {31 1 0 0
+
+• Any character (except newline character)
+^ Starts with "^hello"
+$ Ends with "world$"
+* Zero or more occurrences "aix*"
++ One or more occurrences "aix+"
+{} Exactly the specified number of occurrences "al{2}"
+[] A set of characters "[a-m]"
+\ Special sequence (or escape special characters) "\d"
+| Either or "falls |stays"
+() Capture and group
+
+More special characters:
+
+\d: Matches any decimal digit; [0-9].
+\D : Matches any non-digit character;
+Is : Matches any whitespace character; (space " " tab "\t" newline "\n")
+IS : Matches any non-whitespace character;
+\w: Matches any alphanumeric (word) character; [a-zA-Z0-9_].
+\W: Matches any non-alphanumeric character;
+\b: Matches where the specified characters are at the beginning or at the end of a word
+IB : Matches where the specified characters are present, but NOT at the beginning
+
+Quantifier:
+
+*: 0 or more +: 1 or more
+?: 0 or 1, → optional character {4} : exact number
+{4,6} : range numbers (min, max)
+Compilation Flags:
+
+ASCII, A : Makes several escapes like Iw, \b, Is and Id match only on ASCII characters
+DOTALL, S : Make . match any character, including newlines.
+IGNORECASE, I: Do case-insensitive matches.
+LOCALE, L : Do a locale-aware match.
+MULTILINE, M: Multi-line matching, affecting ^ and $.
+VERBOSE, X (for "extended') : Enable verbose REs, which can be organized more cleanly
